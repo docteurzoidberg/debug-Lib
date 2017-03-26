@@ -151,13 +151,13 @@ void Logger::_beginSection (std::string name, unsigned int level) {
     if (showThis()) {
         if (level & Logger::Error)
             header(name, s_error << KRED);
-        else if (level & Logger::Warning)
+        if (level & Logger::Warning)
             header(name, s_warning << KYEL);
-        else if (level & Logger::Log)
+        if (level & Logger::Log)
             header(name, s_log << KBLU);
-        else if (level & Logger::Info)
+        if (level & Logger::Info)
             header(name, s_info << KCYN);
-        else if (level & Logger::Verbose)
+        if (level & Logger::Verbose)
             header(name, s_verbose << KGRN);
     }
 }

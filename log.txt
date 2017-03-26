@@ -61,3 +61,6 @@
 19:36:11 [1m[34mlog    [0m[0m - 2cout
 19:36:11 [1m[31merror  [0m[0m - 2log
 19:36:11 [1m[32mverbose[0m[0m - 2log
+20:07:25 [1m[34mlog    [0m[0m - 2cout
+20:07:25 [1m[31merror  [0m[0m - 2log
+20:07:25 [1m[32mverbose[0m[0m - 2log
