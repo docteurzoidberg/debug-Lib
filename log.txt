@@ -1,10 +1,63 @@
-26/03/2017 [1m[34mlog    [0m[0m - 2un petit log
-26/03/2017 [1m[31merror  [0m[0m - 2HOLY SHIT
-26/03/2017 [1m[32mverbose[0m[0m - 2nan je rigole
-26/03/2017 [1m[31merror  [0m[0m - 3HOLY SHIT
-26/03/2017 [1m[32mverbose[0m[0m - 3nan je rigole
-15:05:09 [1m[34mlog    [0m[0m - 2un petit log
-15:05:09 [1m[31merror  [0m[0m - 2HOLY SHIT
-15:05:09 [1m[32mverbose[0m[0m - 2nan je rigole
-15:05:09 [1m[31merror  [0m[0m - 3HOLY SHIT
-15:05:09 [1m[32mverbose[0m[0m - 3nan je rigole
+19:15:06 [1m[34mlog    [0m[0m - 2cout
+19:15:06 [1m[31merror  [0m[0m - 2log
+19:15:06 [1m[32mverbose[0m[0m - 2log
+19:15:14 [1m[34mlog    [0m[0m - 2cout
+19:15:14 [1m[31merror  [0m[0m - 2log
+19:15:14 [1m[32mverbose[0m[0m - 2log
+19:15:19 [1m[34mlog    [0m[0m - 2cout
+19:15:19 [1m[31merror  [0m[0m - 2log
+19:15:19 [1m[32mverbose[0m[0m - 2log
+19:17:48 [1m[34mlog    [0m[0m - 2cout
+19:17:48 [1m[31merror  [0m[0m - 2log
+19:17:48 [1m[32mverbose[0m[0m - 2log
+19:28:42 [1m[34mlog    [0m[0m - 2cout
+19:28:42 [1m[31merror  [0m[0m - 2log
+19:28:42 [1m[32mverbose[0m[0m - 2log
+19:28:48 [1m[34mlog    [0m[0m - 2cout
+19:28:48 [1m[31merror  [0m[0m - 2log
+19:28:48 [1m[32mverbose[0m[0m - 2log
+19:28:49 [1m[34mlog    [0m[0m - 2cout
+19:28:49 [1m[31merror  [0m[0m - 2log
+19:28:49 [1m[32mverbose[0m[0m - 2log
+19:28:50 [1m[34mlog    [0m[0m - 2cout
+19:28:50 [1m[31merror  [0m[0m - 2log
+19:28:50 [1m[32mverbose[0m[0m - 2log
+19:28:52 [1m[34mlog    [0m[0m - 2cout
+19:28:52 [1m[31merror  [0m[0m - 2log
+19:28:52 [1m[32mverbose[0m[0m - 2log
+19:28:53 [1m[34mlog    [0m[0m - 2cout
+19:28:53 [1m[31merror  [0m[0m - 2log
+19:28:53 [1m[32mverbose[0m[0m - 2log
+19:28:53 [1m[34mlog    [0m[0m - 2cout
+19:28:53 [1m[31merror  [0m[0m - 2log
+19:28:53 [1m[32mverbose[0m[0m - 2log
+19:28:54 [1m[34mlog    [0m[0m - 2cout
+19:28:54 [1m[31merror  [0m[0m - 2log
+19:28:54 [1m[32mverbose[0m[0m - 2log
+19:28:54 [1m[34mlog    [0m[0m - 2cout
+19:28:54 [1m[31merror  [0m[0m - 2log
+19:28:54 [1m[32mverbose[0m[0m - 2log
+19:28:55 [1m[34mlog    [0m[0m - 2cout
+19:28:55 [1m[31merror  [0m[0m - 2log
+19:28:55 [1m[32mverbose[0m[0m - 2log
+19:28:55 [1m[34mlog    [0m[0m - 2cout
+19:28:55 [1m[31merror  [0m[0m - 2log
+19:28:55 [1m[32mverbose[0m[0m - 2log
+19:28:55 [1m[34mlog    [0m[0m - 2cout
+19:28:55 [1m[31merror  [0m[0m - 2log
+19:28:55 [1m[32mverbose[0m[0m - 2log
+19:28:56 [1m[34mlog    [0m[0m - 2cout
+19:28:56 [1m[31merror  [0m[0m - 2log
+19:28:56 [1m[32mverbose[0m[0m - 2log
+19:28:56 [1m[34mlog    [0m[0m - 2cout
+19:28:56 [1m[31merror  [0m[0m - 2log
+19:28:56 [1m[32mverbose[0m[0m - 2log
+19:28:57 [1m[34mlog    [0m[0m - 2cout
+19:28:57 [1m[31merror  [0m[0m - 2log
+19:28:57 [1m[32mverbose[0m[0m - 2log
+19:36:08 [1m[34mlog    [0m[0m - 2cout
+19:36:08 [1m[31merror  [0m[0m - 2log
+19:36:08 [1m[32mverbose[0m[0m - 2log
+19:36:11 [1m[34mlog    [0m[0m - 2cout
+19:36:11 [1m[31merror  [0m[0m - 2log
+19:36:11 [1m[32mverbose[0m[0m - 2log
