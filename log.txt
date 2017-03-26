@@ -1,0 +1,60 @@
+[1m[34mlog    [0m[0m - un petit log
+[1m[36minfo   [0m[0m - info
+[1m[32mverbose[0m[0m - nan je rigole
+[1m[34mlog    [0m[0m - un petit log
+[1m[36minfo   [0m[0m - info
+[1m[32mverbose[0m[0m - nan je rigole
+Sunday Sun Mar 26 03:42:03 2017 [1m[34mlog    [0m[0m - un petit log
+Sunday Sun Mar 26 03:42:03 2017 [1m[36minfo   [0m[0m - info
+Sunday Sun Mar 26 03:42:03 2017 [1m[32mverbose[0m[0m - nan je rigole
+26/03/2017 H:M:S      [1m[34mlog    [0m[0m - un petit log
+26/03/2017 H:M:S      [1m[36minfo   [0m[0m - info
+26/03/2017 H:M:S      [1m[32mverbose[0m[0m - nan je rigole
+26/03/2017 03:46:21   [1m[34mlog    [0m[0m - un petit log
+26/03/2017 03:46:21   [1m[36minfo   [0m[0m - info
+26/03/2017 03:46:21   [1m[32mverbose[0m[0m - nan je rigole
+26/03/2017 03:46:47   [1m[34mlog    [0m[0m - un petit log
+26/03/2017 03:46:47   [1m[36minfo   [0m[0m - info
+26/03/2017 03:46:47   [1m[32mverbose[0m[0m - nan je rigole
+26/03/2017 03:46:48   [1m[34mlog    [0m[0m - un petit log
+26/03/2017 03:46:48   [1m[36minfo   [0m[0m - info
+26/03/2017 03:46:48   [1m[32mverbose[0m[0m - nan je rigole
+26/03/2017 03:46:49   [1m[34mlog    [0m[0m - un petit log
+26/03/2017 03:46:49   [1m[36minfo   [0m[0m - info
+26/03/2017 03:46:49   [1m[32mverbose[0m[0m - nan je rigole
+26/03/2017 03:54:14   [1m[34mlog    [0m[0m - un petit log
+26/03/2017 03:54:14   [1m[36minfo   [0m[0m - info
+26/03/2017 03:54:14   [1m[32mverbose[0m[0m - nan je rigole
+26/03/2017 03:54:31   [1m[34mlog    [0m[0m - un petit log
+26/03/2017 03:54:31   [1m[36minfo   [0m[0m - info
+26/03/2017 03:54:31   [1m[32mverbose[0m[0m - nan je rigole
+26/03/2017 03:54:40   [1m[34mlog    [0m[0m - un petit log
+26/03/2017 03:54:40   [1m[36minfo   [0m[0m - info
+26/03/2017 03:54:40   [1m[32mverbose[0m[0m - nan je rigole
+                      [1m[34mlog    [0m[0m - un petit log
+                      [1m[36minfo   [0m[0m - info
+                      [1m[32mverbose[0m[0m - nan je rigole
+  [1m[34mlog    [0m[0m - un petit log
+  [1m[36minfo   [0m[0m - info
+  [1m[32mverbose[0m[0m - nan je rigole
+ [1m[34mlog    [0m[0m - un petit log
+ [1m[36minfo   [0m[0m - info
+ [1m[32mverbose[0m[0m - nan je rigole
+[1m[34mlog    [0m[0m - un petit log
+[1m[36minfo   [0m[0m - info
+[1m[32mverbose[0m[0m - nan je rigole
+[1m[34mlog    [0m[0m - un petit log
+[1m[36minfo   [0m[0m - info
+[1m[32mverbose[0m[0m - nan je rigole
+03:59:07[1m[34mlog    [0m[0m - un petit log
+03:59:07[1m[36minfo   [0m[0m - info
+03:59:07[1m[32mverbose[0m[0m - nan je rigole
+03:59:54 [1m[34mlog    [0m[0m - un petit log
+03:59:54 [1m[36minfo   [0m[0m - info
+03:59:54 [1m[32mverbose[0m[0m - nan je rigole
+[1m[34mlog    [0m[0m - un petit log
+[1m[36minfo   [0m[0m - info
+[1m[32mverbose[0m[0m - nan je rigole
+26/03/2017 [1m[34mlog    [0m[0m - un petit log
+26/03/2017 [1m[36minfo   [0m[0m - info
+26/03/2017 [1m[32mverbose[0m[0m - nan je rigole

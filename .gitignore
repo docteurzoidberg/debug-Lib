@@ -27,3 +27,7 @@
 *.exe
 *.out
 *.app
+
+#perso
+/build
+/.vscode
