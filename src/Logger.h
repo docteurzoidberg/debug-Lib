@@ -7,6 +7,7 @@
 #include <string>
 #include <ctime>
 #include <sstream>
+#include <assert.h>
 
 //          COLOR
 #define RST  "\x1B[0m"
@@ -46,6 +47,7 @@ public:
     static void verbose(std::string msg) { Logger::get()._verbose(msg); }
 
     static void redirectTo (unsigned int levels, std::ostream& os) { Logger::get()._redirectTo(levels, os); }
+    static void redirectToFile (unsigned int levels, std::string path) { Logger::get()._redirectToFile(levels, path); }
 
     static void setDatePrinting (bool b)  { Logger::get()._setDatePrinting(b); }
     static void setHourPrinting (bool b)  { Logger::get()._setHourPrinting(b); }
@@ -63,6 +65,7 @@ private:
     void _verbose(std::string msg);
 
     void _redirectTo (unsigned int levels, std::ostream& os);
+    void _redirectToFile (unsigned int levels, std::string path);
 
     void _setDatePrinting (bool b) { printDate = b; };
     void _setHourPrinting (bool b) { printHour = b; };
@@ -73,14 +76,23 @@ private:
     ~Logger();
     std::string getDateAndHours ();
 
-    std::ostream s_error;
-    std::ostream s_warning;
-    std::ostream s_log;
-    std::ostream s_info;
-    std::ostream s_verbose;
+    std::ostream s_error; 
+    std::ofstream fileOutError;
 
-    bool printHour = false;
-    bool printDate = true;
+    std::ostream s_warning; 
+    std::ofstream fileOutWarning;
+
+    std::ostream s_log; 
+    std::ofstream fileOutLog;
+
+    std::ostream s_info; 
+    std::ofstream fileOutInfo;
+
+    std::ostream s_verbose; 
+    std::ofstream fileOutVerbose;
+
+    bool printHour = true;
+    bool printDate = false;
     int dateHoursSize = 0;
 };
 

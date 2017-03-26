@@ -3,12 +3,7 @@
 
 
 int main (int argc, char **argv) {
-    std::ofstream logFile("log.txt", std::ios::out | std::ios::app);
-
-    if(logFile)
-        Logger::redirectTo(Log | Verbose | Info, logFile);
-    else
-        std::cout << "Erreur à l'ouverture !" << std::endl;
+    Logger::redirectToFile(Log | Verbose | Info, "log2.txt");
 
     Logger::log("un petit log");
     Logger::warning("un warning");
@@ -16,8 +11,20 @@ int main (int argc, char **argv) {
     Logger::error("HOLY SHIT");
     Logger::verbose("nan je rigole");
 
-    if (logFile)
-        logFile.close();
+    Logger::redirectToFile(Error | Verbose | Info, "log.txt");
 
+    Logger::log("2un petit log");
+    Logger::warning("2un warning");
+    Logger::info("2info");
+    Logger::error("2HOLY SHIT");
+    Logger::verbose("2nan je rigole");
+
+    Logger::redirectToFile(Log | Info, "log2.txt");
+
+    Logger::log("3un petit log");
+    Logger::warning("3un warning");
+    Logger::info("3info");
+    Logger::error("3HOLY SHIT");
+    Logger::verbose("3nan je rigole");
     return 0;
 }

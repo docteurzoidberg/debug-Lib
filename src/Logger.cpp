@@ -10,7 +10,7 @@ Logger::Logger (std::ostream& os) :
     s_error(os.rdbuf()), s_warning(os.rdbuf()), s_log(os.rdbuf()), s_info(os.rdbuf()), s_verbose(os.rdbuf()) {
 }
 
-Logger::~Logger() {};
+Logger::~Logger() {}
 
 void Logger::_error (std::string msg) {
     this->s_error << getDateAndHours() << BOLD(FRED("error  ")) << " - " << msg << std::endl;
@@ -63,14 +63,79 @@ std::string Logger::getDateAndHours () {
 }
 
 void Logger::_redirectTo (unsigned int levels, std::ostream& os) {
-    if (levels & Error)
+    if (levels & Error) {
+        if (fileOutError)
+            fileOutError.close();
         this->s_error.rdbuf(os.rdbuf());
-    if (levels & Warning)
+    }
+
+    if (levels & Warning) {
+        if (fileOutWarning)
+            fileOutWarning.close();
+
         this->s_warning.rdbuf(os.rdbuf());
-    if (levels & Info)
+    }
+
+    if (levels & Info) {
+        if (fileOutInfo)
+            fileOutInfo.close();
         this->s_info.rdbuf(os.rdbuf());
-    if (levels & Log)
+    }
+
+    if (levels & Log) {
+        if (fileOutLog)
+            fileOutLog.close();
         this->s_log.rdbuf(os.rdbuf());
-    if (levels & Verbose)
+    }
+
+    if (levels & Verbose) {
+        if (fileOutVerbose)
+            fileOutVerbose.close();
         this->s_verbose.rdbuf(os.rdbuf());
+    }
+}
+
+void Logger::_redirectToFile (unsigned int levels, std::string path) {
+    if (levels == 0)
+        return;
+
+    if (levels & Error) {
+        if (fileOutError)
+            fileOutError.close();
+
+        fileOutError.open(path, std::ios::out | std::ios::app);
+        this->s_error.rdbuf(fileOutError.rdbuf());
+    }
+    
+    if (levels & Warning) {
+        if (fileOutWarning)
+            fileOutWarning.close();
+
+        fileOutWarning.open(path, std::ios::out | std::ios::app);
+        this->s_warning.rdbuf(fileOutWarning.rdbuf());
+    }
+
+    if (levels & Info) {
+        if (fileOutInfo)
+            fileOutInfo.close();
+
+        fileOutInfo.open(path, std::ios::out | std::ios::app);
+        this->s_log.rdbuf(fileOutInfo.rdbuf());
+    }
+
+    if (levels & Log) {
+        if (fileOutLog)
+            fileOutLog.close();
+
+        fileOutLog.open(path, std::ios::out | std::ios::app);
+        this->s_info.rdbuf(fileOutLog.rdbuf());
+    }
+
+    if (levels & Verbose) {
+        if (fileOutVerbose)
+            fileOutVerbose.close();
+
+        fileOutVerbose.open(path, std::ios::out | std::ios::app);
+        this->s_verbose.rdbuf(fileOutVerbose.rdbuf());
+    }
 }
