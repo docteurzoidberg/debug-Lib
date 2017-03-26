@@ -12,23 +12,23 @@ Logger::Logger (std::ostream& os) :
 
 Logger::~Logger() {};
 
-void Logger::error (std::string msg) {
+void Logger::_error (std::string msg) {
     this->s_error << getDateAndHours() << BOLD(FRED("error  ")) << " - " << msg << std::endl;
 }
 
-void Logger::warning(std::string msg) {
+void Logger::_warning(std::string msg) {
     this->s_warning << getDateAndHours() << BOLD(FYEL("warning")) << " - " << msg << std::endl;
 }
 
-void Logger::log(std::string msg) {
+void Logger::_log(std::string msg) {
     this->s_log << getDateAndHours() << BOLD(FBLU("log    ")) << " - " << msg << std::endl;
 }
 
-void Logger::info(std::string msg) {
+void Logger::_info(std::string msg) {
     this->s_info << getDateAndHours() << BOLD(FCYN("info   ")) << " - " << msg << std::endl;
 }
 
-void Logger::verbose(std::string msg) {
+void Logger::_verbose(std::string msg) {
     this->s_verbose << getDateAndHours() << BOLD(FGRN("verbose")) << " - " << msg << std::endl;
 }
 
@@ -62,7 +62,7 @@ std::string Logger::getDateAndHours () {
     return s + " ";
 }
 
-void Logger::redirectTo (unsigned int levels, std::ostream& os) {
+void Logger::_redirectTo (unsigned int levels, std::ostream& os) {
     if (levels & Error)
         this->s_error.rdbuf(os.rdbuf());
     if (levels & Warning)

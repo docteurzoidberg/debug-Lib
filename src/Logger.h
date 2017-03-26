@@ -38,23 +38,36 @@
 
 class Logger {
 public:
+
+    static void error (std::string msg) { Logger::get()._error(msg); }
+    static void warning(std::string msg) { Logger::get()._warning(msg); }
+    static void log(std::string msg) { Logger::get()._log(msg); }
+    static void info(std::string msg) { Logger::get()._info(msg); }
+    static void verbose(std::string msg) { Logger::get()._verbose(msg); }
+
+    static void redirectTo (unsigned int levels, std::ostream& os) { Logger::get()._redirectTo(levels, os); }
+
+    static void setDatePrinting (bool b)  { Logger::get()._setDatePrinting(b); }
+    static void setHourPrinting (bool b)  { Logger::get()._setHourPrinting(b); }
+    static void setMinimumDateHoursSize (int len)  { Logger::get()._setMinimumDateHoursSize(len); }
+
+private:
     Logger(Logger const&) = delete;
     void operator=(Logger const&) = delete;
     static Logger& get();
 
-    void error (std::string msg);
-    void warning(std::string msg);
-    void log(std::string msg);
-    void info(std::string msg);
-    void verbose(std::string msg);
+    void _error (std::string msg);
+    void _warning(std::string msg);
+    void _log(std::string msg);
+    void _info(std::string msg);
+    void _verbose(std::string msg);
 
-    void redirectTo (unsigned int levels, std::ostream& os);
+    void _redirectTo (unsigned int levels, std::ostream& os);
 
-    void setDatePrinting (bool b) { printDate = b; };
-    void setHourPrinting (bool b) { printHour = b; };
-    void setMinimumDateHoursSize (int len) { dateHoursSize = len; }
+    void _setDatePrinting (bool b) { printDate = b; };
+    void _setHourPrinting (bool b) { printHour = b; };
+    void _setMinimumDateHoursSize (int len) { dateHoursSize = len; }
 
-private:
 
     Logger(std::ostream& os);
     ~Logger();

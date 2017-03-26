@@ -6,15 +6,15 @@ int main (int argc, char **argv) {
     std::ofstream logFile("log.txt", std::ios::out | std::ios::app);
 
     if(logFile)
-        Logger::get().redirectTo(Log | Verbose | Info, logFile);
+        Logger::redirectTo(Log | Verbose | Info, logFile);
     else
         std::cout << "Erreur à l'ouverture !" << std::endl;
 
-    Logger::get().log("un petit log");
-    Logger::get().warning("un warning");
-    Logger::get().info("info");
-    Logger::get().error("HOLY SHIT");
-    Logger::get().verbose("nan je rigole");
+    Logger::log("un petit log");
+    Logger::warning("un warning");
+    Logger::info("info");
+    Logger::error("HOLY SHIT");
+    Logger::verbose("nan je rigole");
 
     if (logFile)
         logFile.close();

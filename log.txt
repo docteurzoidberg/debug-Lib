@@ -58,3 +58,12 @@ Sunday Sun Mar 26 03:42:03 2017 [1m[32mverbose[0m[0m - nan je rigole
 26/03/2017 [1m[34mlog    [0m[0m - un petit log
 26/03/2017 [1m[36minfo   [0m[0m - info
 26/03/2017 [1m[32mverbose[0m[0m - nan je rigole
+26/03/2017 [1m[34mlog    [0m[0m - un petit log
+26/03/2017 [1m[36minfo   [0m[0m - info
+26/03/2017 [1m[32mverbose[0m[0m - nan je rigole
+26/03/2017 [1m[34mlog    [0m[0m - un petit log
+26/03/2017 [1m[36minfo   [0m[0m - info
+26/03/2017 [1m[32mverbose[0m[0m - nan je rigole
+26/03/2017 [1m[34mlog    [0m[0m - un petit log
+26/03/2017 [1m[36minfo   [0m[0m - info
+26/03/2017 [1m[32mverbose[0m[0m - nan je rigole
