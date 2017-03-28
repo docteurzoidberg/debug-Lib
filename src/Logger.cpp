@@ -100,7 +100,7 @@ void Logger::_redirectTo (unsigned int levels, std::ostream& os) {
     }
 }
 
-void Logger::_redirectToFile (unsigned int levels, char* const path) {
+void Logger::_redirectToFile (unsigned int levels, std::string path) {
     if (levels == 0)
         return;
 

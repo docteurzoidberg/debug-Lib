@@ -53,7 +53,7 @@ public:
     static std::ostream& getVerboseStream() { return Logger::get()._getVerboseStream(); }
 
     static void redirectTo (unsigned int levels, std::ostream& os) { Logger::get()._redirectTo(levels, os); }
-    static void redirectToFile (unsigned int levels, char* const path) { Logger::get()._redirectToFile(levels, path); }
+    static void redirectToFile (unsigned int levels, std::string path) { Logger::get()._redirectToFile(levels, path); }
 
     static void beginSection (std::string name, unsigned int level) { Logger::get()._beginSection(name, level); }
     static void endSection (std::string name) { Logger::get()._endSection(name); }
@@ -82,7 +82,7 @@ private:
     std::ostream& _getVerboseStream() { return s_verbose; }
 
     void _redirectTo (unsigned int levels, std::ostream& os);
-    void _redirectToFile (unsigned int levels, char* const path);
+    void _redirectToFile (unsigned int levels, std::string path);
 
     void _beginSection (std::string name, unsigned int level);
     void _endSection (std::string name);
