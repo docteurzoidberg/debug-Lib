@@ -100,7 +100,7 @@ void Logger::_redirectTo (unsigned int levels, std::ostream& os) {
     }
 }
 
-void Logger::_redirectToFile (unsigned int levels, char* const path) {
+void Logger::_redirectToFile (unsigned int levels, std::string path) {
     if (levels == 0)
         return;
 
@@ -163,11 +163,11 @@ void Logger::_beginSection (std::string name, unsigned int level) {
 }
 
 void Logger::header (std::string title, std::ostream& os) {
-    os << "╔";
+    os << "\t╔";
     for (unsigned i = 0; i < title.size() + 2; ++i) os << "═";
     os << "╗" << std::endl;
-    os << "║ " << title << " ║" << std::endl;
-    os << "╚";
+    os << "\t║ " << title << " ║" << std::endl;
+    os << "\t╚";
     for (unsigned i = 0; i < title.size() + 2; ++i) os << "═";
     os << "╝";
     os << std::endl << RST;

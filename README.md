@@ -9,22 +9,22 @@ Librairie de debug en c++ inspiré de Winston (lib nodejs)
 Pour écrire des messages dans les niveaux correspondants
 
 ```C++
-Logger::error(std::string msg)
+void Logger::error (std::string msg);
 ``` 
 ```C++
-Logger::warning(std::string msg)
+void Logger::warning (std::string msg);
 ``` 
 
 ```C++
-Logger::log(std::string msg)
+void Logger::log (std::string msg);
 ```
 
 ```C++
-Logger::info(std::string msg)
+void Logger::info (std::string msg);
 ```
 
 ```C++
-Logger::verbose(std::string msg)
+void Logger::verbose (std::string msg);
 ```
 
 ## Redirection des flux
@@ -32,12 +32,12 @@ Par défaut le flux est std::cout pour tous
 
 Pour rediriger vers n'importe quel flux
 ```C++
-Logger::redirectTo(unsigned int levels, std::ostream os)
+void Logger::redirectTo (unsigned int levels, std::ostream os);
 ```
 
 Pour rediriger vers un fichier
 ```C++
-Logger::redirectToFile(unsigned int levels, char* const path)
+void Logger::redirectToFile (unsigned int levels, char* const path);
 ```
 
 ## Section
@@ -45,22 +45,22 @@ Afin de définir des sections
 
 Commence une section "name" et l'affiche sur les niveaux "levels"
 ```C++
-Logger::beginSection(std::string name, unsigned int levels)
+void Logger::beginSection (std::string name, unsigned int levels);
 ```
 
 Termine la section "name"
 ```C++
-Logger::endSection(std::string name)
+void Logger::endSection (std::string name);
 ```
 
 Affiche la section "name" et l'affiche  sur les niveaux levels
 ```C++
-Logger::showSection(std::string name, unsigned int levels)
+void Logger::showSection (std::string name, unsigned int levels);
 ```
 
 Cache la section "name"
 ```C++
-Logger::hideSection(std::string name)
+void Logger::hideSection (std::string name);
 ```
 
 ## Format
@@ -71,8 +71,18 @@ et Hours : hh:mm:ss
 
 Pour ne pas les afficher : 
 ```C++
-void setDatePrinting (bool b)
-void setHourPrinting (bool b)
+void Logger::setDatePrinting (bool b);
+void Logger::setHourPrinting (bool b);
 ```
 Par défaut seule l'heure est affiché
+
+## Stream Assesseur
+Pour obtenir le flux des différents niveaux : 
+```C++
+std::ostream& Logger::getErrorStream ();
+std::ostream& Logger::getWarningStream ();
+std::ostream& Logger::getLogStream ();
+std::ostream& Logger::getInfoStream ();
+std::ostream& Logger::getVerboseStream ();
+```
 
