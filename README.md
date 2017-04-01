@@ -58,7 +58,7 @@ void allowColorOn(std::string const& name, bool allowC); // affiche les couleurs
 ```C++
 void setFormatOf(std::string const& name, std::string const& format); // modifie le format d'un transport
 ```
-  {lvl} : le level du log (par exemple "error)
+  {lvl} : le level du log (par exemple "error")
   
   {msg} : le message du log
   
@@ -103,7 +103,7 @@ Pour afficher un '%' ou un '\' il faut les échapper avec un '\'.
 
 ## Exemple
 
-cf : [test] (https://github.com/Hazurl/debug-Lib/blob/master/src/main.cpp)
+cf : [main.cpp](src/main.cpp)
 
 
 
