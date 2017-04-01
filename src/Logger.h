@@ -2,15 +2,19 @@
 #define __LOGGER_H__
 
 #include <vector>
+#include <map>
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <ctime>
 #include <sstream>
 #include <unordered_set>
+#include <sys/time.h>
 
 //          COLOR
 #define RST  "\033[0m"
+#define BLD  "\033[1m"
+#define UDL  "\033[4m"
 #define KRED  "\033[31m"
 #define KGRN  "\033[32m"
 #define KYEL  "\033[33m"
@@ -30,97 +34,102 @@
 #define BOLD(x) "\033[1m" << x << RST
 #define UNDL(x) "\033[4m" << x << RST
 
+class Transport {
+public:
+    Transport(std::string const& filePath);
+    Transport(std::ostream& os);
+
+    std::ostream& getStream();
+    void setFormat(std::string const& format);
+    void allowColor(bool c);
+
+    void print(std::string const& msg, std::string const& mainColor, std::string const& level, bool endl = true);
+    void append(std::string const& msg, bool endl = false);
+
+    ~Transport();
+private:
+    std::ostream os;
+    std::ofstream fos;
+
+    std::string format = "{col}{bld}{lvl}{clr} {8}- {msg}"; // <color><bold>level</bold></color> - message            "-" is at the position 10
+    bool allowCol = true;
+}
+
+;;;
+
 class Logger {
 public:
-//          LEVEL DEBUG (Flag)
-    static const unsigned int Error = 1;
-    static const unsigned int Warning = 2;
-    static const unsigned int Log = 4;
-    static const unsigned int Info = 8;
-    static const unsigned int Verbose = 16;
-    static const unsigned int All = Error | Warning | Log | Info | Verbose;
+    static const unsigned int NOTHING = 0
+                            , ERROR = 1
+                            , WARNING = 2
+                            , WARN = 2 // alias de Warning
+                            , LOG = 4
+                            , INFO = 8
+                            , VERBOSE = 16
+                            , VERB = 16 // alias de Verbose
+                            , SPECIAL = 32
+                            , SPE = 32 // alias de Special
+                            , ALL = ERROR | WARN | LOG | INFO | VERB | SPE;
 
-    static void error (std::string msg) { Logger::get()._error(msg); }
-    static void warning(std::string msg) { Logger::get()._warning(msg); }
-    static void log(std::string msg) { Logger::get()._log(msg); }
-    static void info(std::string msg) { Logger::get()._info(msg); }
-    static void verbose(std::string msg) { Logger::get()._verbose(msg); }
+    static void error (std::string const& msg)      { Logger::get()._error(msg); }
+    static void warning(std::string const& msg)     { Logger::get()._warning(msg); }
+    static void warn(std::string const& msg)        { Logger::get()._warning(msg); }
+    static void log(std::string const& msg)         { Logger::get()._log(msg); }
+    static void info(std::string const& msg)        { Logger::get()._info(msg); }
+    static void verbose(std::string const& msg)     { Logger::get()._verbose(msg); }
+    static void verb(std::string const& msg)        { Logger::get()._verbose(msg); }
+    static void special(std::string const& msg)     { Logger::get()._special(msg); }
+    static void spe(std::string const& msg)         { Logger::get()._special(msg); }
 
-    static std::ostream& getErrorStream() { return Logger::get()._getErrorStream(); }
-    static std::ostream& getWarningStream() { return Logger::get()._getWarningStream(); }
-    static std::ostream& getLogStream() { return Logger::get()._getLogStream(); }
-    static std::ostream& getInfoStream() { return Logger::get()._getInfoStream(); }
-    static std::ostream& getVerboseStream() { return Logger::get()._getVerboseStream(); }
+    static void createTransport(Transport* t, std::string const& name);
+    static void setTransportOf(unsigned int levels, std::string const& name);
+    static void addTransportOf(unsigned int levels, std::string const& name);
+    static void removeTransportOf(unsigned int levels, std::string const& name);
+    static void cleanTransportOf(unsigned int levels);
 
-    static void redirectTo (unsigned int levels, std::ostream& os) { Logger::get()._redirectTo(levels, os); }
-    static void redirectToFile (unsigned int levels, std::string path) { Logger::get()._redirectToFile(levels, path); }
+    static void setFormatOf(std::string const& name, std::string const& format);
+    static void allowColorOn(std::string const& name, bool allowC);
 
-    static void beginSection (std::string name, unsigned int level) { Logger::get()._beginSection(name, level); }
-    static void endSection (std::string name) { Logger::get()._endSection(name); }
-    static void hideSection (std::string name) { Logger::get()._hideSection(name); }
-    static void showSection (std::string name, unsigned int level) { Logger::get()._showSection(name, level); }
-
-    static void setDatePrinting (bool b)  { Logger::get()._setDatePrinting(b); }
-    static void setHourPrinting (bool b)  { Logger::get()._setHourPrinting(b); }
-    static void setMinimumDateHoursSize (int len)  { Logger::get()._setMinimumDateHoursSize(len); }
+    static void section(std::string name, unsigned int levels = Logger::ALL, unsigned int titleLevels = Logger::ALL);
+    static void section_end(std::string name);
+    static void showSection(std::string name);
+    static void hideSection(std::string name);
+    static void title(std::string name, unsigned int levels);
 
 private:
+    Logger();
+    ~Logger();
+
+// SINGLETON
     Logger(Logger const&) = delete;
     void operator=(Logger const&) = delete;
-    static Logger& get();
+    static Logger& get() { static Logger l; return l; }
 
-    void _error (std::string msg);
-    void _warning(std::string msg);
-    void _log(std::string msg);
-    void _info(std::string msg);
-    void _verbose(std::string msg);
+    void _error (std::string const& msg);
+    void _warning(std::string const& msg);
+    void _log(std::string const& msg);
+    void _info(std::string const& msg);
+    void _verbose(std::string const& msg);
+    void _special(std::string const& msg);
 
-    std::ostream& _getErrorStream() { return s_error; }
-    std::ostream& _getWarningStream() { return s_warning; }
-    std::ostream& _getLogStream() { return s_log; }
-    std::ostream& _getInfoStream() { return s_info; }
-    std::ostream& _getVerboseStream() { return s_verbose; }
+    void _title(std::string name, unsigned int levels);
+    unsigned int getLogsLevel();
 
-    void _redirectTo (unsigned int levels, std::ostream& os);
-    void _redirectToFile (unsigned int levels, std::string path);
+    std::map<std::string, Transport*> transports;
+    std::unordered_set<std::string> errTrans;
+    std::unordered_set<std::string> warnTrans;
+    std::unordered_set<std::string> logTrans;
+    std::unordered_set<std::string> infoTrans;
+    std::unordered_set<std::string> verbTrans;
+    std::unordered_set<std::string> speTrans;
 
-    void _beginSection (std::string name, unsigned int level);
-    void _endSection (std::string name);
-    void _showSection (std::string name, unsigned int level);
-    void _hideSection (std::string name);
-    void header (std::string title, std::ostream& os);
-    bool showThis();
+    std::unordered_set<std::string> curSections;
+    std::unordered_set<std::string> sectionsHidden;
+    std::map<std::string, unsigned int> sectionLogsLevel;
+    unsigned int mainLogsLevel = Logger::ALL;
 
-    void _setDatePrinting (bool b) { printDate = b; };
-    void _setHourPrinting (bool b) { printHour = b; };
-    void _setMinimumDateHoursSize (int len) { dateHoursSize = len; }
-
-
-    Logger(std::ostream& os);
-    ~Logger();
-    std::string getDateAndHours ();
-
-    std::ostream s_error; 
-    std::ofstream fileOutError;
-
-    std::ostream s_warning; 
-    std::ofstream fileOutWarning;
-
-    std::ostream s_log; 
-    std::ofstream fileOutLog;
-
-    std::ostream s_info; 
-    std::ofstream fileOutInfo;
-
-    std::ostream s_verbose; 
-    std::ofstream fileOutVerbose;
-
-    bool printHour = true;
-    bool printDate = false;
-    int dateHoursSize = 0;
-
-    std::unordered_set<std::string> sectionHide;
-    std::unordered_set<std::string> inSections;
+    bool logsLevelChanged = true;
+    unsigned int curLogsLevel = Logger::ALL;
 };
 
 #endif
