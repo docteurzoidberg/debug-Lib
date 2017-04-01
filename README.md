@@ -58,29 +58,48 @@ void allowColorOn(std::string const& name, bool allowC); // affiche les couleurs
 ```C++
 void setFormatOf(std::string const& name, std::string const& format); // modifie le format d'un transport
 ```
-```{lvl} : le level du log (par exemple "error")```
-```{msg} : le message du log```
-```{col} : debut de la couleur (en fonction du niveau du log (par exemple rouge pour error)```
-```{bld} : debut de la police grasse```
-```{udl} : debut du soulignement```
-```{clr} : termine tout (couleur, police grasse / souligné) ```
+  {lvl} : le level du log (par exemple "error)
+  
+  {msg} : le message du log
+  
+  {col} : debut de la couleur (en fonction du niveau du log (par exemple rouge pour error)
+  
+  {bld} : debut de la police grasse
+  
+  {udl} : debut du soulignement
+  
+  {clr} : termine tout (couleur, police grasse / souligné) 
+  
 Date / Heure :
-```{year} : année```
-```{mon} : mois```
-```{day} : jour du mois```
-```{hour} : heures```
-```{min} : minutes```
-```{sec} : secondes```
-```{mil} : milliseconds```
-```{mic} : microseconds```
+
+  {year} : année
+  
+  {mon} : mois
+  
+  {day} : jour du mois
+  
+  {hour} : heures
+  
+  {min} : minutes
+  
+  {sec} : secondes
+  
+  {mil} : milliseconds
+  
+  {mic} : microseconds
 
 Pour fixé une position :
-```{x} : avec x = la position par exemple {12}```
+
+  {x} : avec x = la position par exemple {12}
 
 Format par défaut :
-```{col}{bld}{lvl}{clr} {8}- {msg}``
+
+  {col}{bld}{lvl}{clr} {8}- {msg}
+  
 qui affiche : 
-```error   - mon message```
+  "error   - mon message"
+  
+Pour afficher un '%' ou un '\' il faut les échapper avec un '\'.
 
 ## Exemple
 
