@@ -50,13 +50,13 @@ void Logger::title(std::string name, unsigned int levels); // Affiche un titre s
 
 ```C++
 void Logger::showOnly(unsigned int levels = Logger::ALL); // logs a affiché (global au programme)
-void allowColorOn(std::string const& name, bool allowC); // affiche les couleurs sur un transport
+void Logger::allowColorOn(std::string const& name, bool allowC); // affiche les couleurs sur un transport
 ```
 
 ### Format
 
 ```C++
-void setFormatOf(std::string const& name, std::string const& format); // modifie le format d'un transport
+void Logger::setFormatOf(std::string const& name, std::string const& format); // modifie le format d'un transport
 ```
 ```
   {lvl} : le level du log (par exemple "error")
