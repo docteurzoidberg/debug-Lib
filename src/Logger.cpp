@@ -407,3 +407,7 @@ unsigned int Logger::getLogsLevel() {
 
     return curLogsLevel;
 }
+
+void Logger::showOnly(unsigned int levels) {
+    Logger::get().mainLogsLevel = levels;
+}

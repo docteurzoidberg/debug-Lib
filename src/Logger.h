@@ -90,6 +90,8 @@ public:
     static void setFormatOf(std::string const& name, std::string const& format);
     static void allowColorOn(std::string const& name, bool allowC);
 
+    static void showOnly(unsigned int levels = Logger::ALL);
+
     static void section(std::string name, unsigned int levels = Logger::ALL, unsigned int titleLevels = Logger::ALL);
     static void section_end(std::string name);
     static void showSection(std::string name);

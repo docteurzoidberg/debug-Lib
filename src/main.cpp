@@ -8,6 +8,8 @@ int main (int argc, char **argv) {
     Logger::addTransportOf(Logger::LOG, "log");
     Logger::setTransportOf(Logger::ERROR, "cerr");
 
+    Logger::showOnly(Logger::ERROR);
+
     Logger::log("truc");
     Logger::setFormatOf("cout", "{day}/{mon}/{year} {hour}:{min}:{sec}:{mil}:{mic} => {col}{udl}{bld}{lvl}{clr} {30}: \"{col}{msg}{clr}\"");
     Logger::setFormatOf("cerr", "{day}/{mon}/{year} {hour}:{min}:{sec}:{mil}:{mic} => {col}{udl}{bld}{lvl}{clr} {30}: \"{col}{msg}{clr}\"");
